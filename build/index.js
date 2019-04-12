@@ -9,36 +9,48 @@ var _child_process = require("child_process");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var pExec = (0, _util.promisify)(_child_process.exec);
-pExec("git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}'").then(function (_ref) {
-  var stdout = _ref.stdout;
-  var clearable = stdout.split("\n").filter(function (branch) {
-    return branch != "";
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+const pExec = (0, _util.promisify)(_child_process.exec);
+pExec('git fetch -p').then(() => pExec("git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}'")).then(
+/*#__PURE__*/
+function () {
+  var _ref = _asyncToGenerator(function* ({
+    stdout
+  }) {
+    const clearable = stdout.split('\n').filter(branch => branch != '');
+
+    if (clearable.length === 0) {
+      console.log('👏 Everything is clean here. There is nothing to clean !');
+      return;
+    }
+
+    const {
+      branches
+    } = yield _inquirer.default.prompt([{
+      type: 'checkbox',
+      message: `${clearable.length} branches clearable found. Select the one you want to delete :`,
+      name: 'branches',
+      choices: clearable.map(el => ({
+        name: el,
+        checked: true
+      }))
+    }]);
+
+    if (branches.length === 0) {
+      console.log('No branches selected. Nothing has been changed, bye ! 👋');
+      return;
+    }
+
+    yield pExec(`git branch -D ${branches.join(' ')}`);
+    console.log(`🗑 ${clearable.length} branches deleted. Bye ! 👋`);
   });
 
-  if (clearable.length === 0) {
-    console.log("👏 Everything is clean here. There is nothing to clean !");
-  } else {
-    _inquirer.default.prompt([{
-      type: "checkbox",
-      message: "".concat(clearable.length, " branches clearable found. Select the one you want to delete :"),
-      name: "branches",
-      choices: clearable.map(function (el) {
-        return {
-          name: el,
-          checked: true
-        };
-      })
-    }]).then(function (_ref2) {
-      var branches = _ref2.branches;
-
-      if (branches.length === 0) {
-        console.log("No branches selected. Nothing has been changed, bye ! 👋");
-      }
-
-      pExec("git branch -D ".concat(branches.join(" "))).then(function () {
-        console.log("\uD83D\uDDD1 ".concat(clearable.length, " branches deleted. Bye ! \uD83D\uDC4B"));
-      });
-    });
-  }
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}()).catch(error => {
+  console.error(error);
 });
