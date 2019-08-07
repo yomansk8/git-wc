@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Yomansk8 <yomansk8@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/yomansk8/git-wc"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
