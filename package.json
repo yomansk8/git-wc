@@ -1,6 +1,6 @@
 {
   "name": "git-wc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Clean your git local branches as easy as flushing the toilets ;)",
   "main": "index.js",
   "author": "Yomansk8 <yomansk8@gmail.com>",
