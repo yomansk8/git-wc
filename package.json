@@ -1,17 +1,21 @@
 {
   "name": "git-wc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Clean your git local branches as easy as flushing the toilets ;)",
   "main": "index.js",
   "author": "Yomansk8 <yomansk8@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/yomansk8/git-wc"
+  },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3"
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5"
   },
   "dependencies": {
-    "inquirer": "^6.2.2"
+    "inquirer": "6.5.0"
   },
   "scripts": {
     "build": "./node_modules/.bin/babel ./index.js --out-dir ./build/",

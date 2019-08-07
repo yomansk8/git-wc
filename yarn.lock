@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@babel/cli@^7.4.3":
+"@babel/cli@7.4.3":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.4.3.tgz#353048551306ff42e5855b788b6ccd9477289774"
   integrity sha512-cbC5H9iTDV9H7sMxK5rUm18UbdVPNTPqgdzmQAkOUP3YLysgDWLZaysVAfylK49rgTlzL01a6tXyq9rCb3yLhQ==
@@ -25,7 +25,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.4.3":
+"@babel/core@7.4.3":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.4.3.tgz#198d6d3af4567be3989550d97e068de94503074f"
   integrity sha512-oDpASqKFlbspQfzAE7yaeTmdljSH2ADIvBlb0RwbStltTuWa0+7CCI1fYVINNv9saHPa1W7oaKeuNuKj+RQCvA==
@@ -580,7 +580,7 @@
     "@babel/helper-regex" "^7.4.3"
     regexpu-core "^4.5.4"
 
-"@babel/preset-env@^7.4.3":
+"@babel/preset-env@7.4.3":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.4.3.tgz#e71e16e123dc0fbf65a52cbcbcefd072fbd02880"
   integrity sha512-FYbZdV12yHdJU5Z70cEg0f6lvtpZ8jFSDakTm7WXeJbLXh4R0ztGEu/SW7G1nJ2ZvKwDhz8YrbA84eYyprmGqw==
@@ -1242,7 +1242,7 @@ ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
 
-inquirer@^6.2.2:
+inquirer@6.2.2:
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.2.2.tgz#46941176f65c9eb20804627149b743a218f25406"
   integrity sha512-Z2rREiXA6cHRR9KBOarR3WuLlFzlIfAEIiB45ll5SSadMg7WqOh1MKEjjndfuH5ewXdixWCxqnVfGOQzPeiztA==
