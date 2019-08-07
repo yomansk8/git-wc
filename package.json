@@ -10,12 +10,12 @@
     "directory": "https://github.com/yomansk8/git-wc"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3"
+    "@babel/cli": "7.4.3",
+    "@babel/core": "7.4.3",
+    "@babel/preset-env": "7.4.3"
   },
   "dependencies": {
-    "inquirer": "^6.2.2"
+    "inquirer": "6.2.2"
   },
   "scripts": {
     "build": "./node_modules/.bin/babel ./index.js --out-dir ./build/",
